@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  datemanager.apigateway:
+    build:
+      context: .
+      dockerfile: DateManager.APIGateway/Dockerfile
+    image: ftea/datemanagerapigateway:latest
+    environment:
+      - "UrlFront=http://localhost:5173,http://127.0.0.1:5173"
+    ports:
+      - 80:80
+
+  datemanager.api:
+    build:
+      context: .
+      dockerfile: DateManeger.API/Dockerfile
+    image: ftea/datemanagerapi:latest
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 8080:80
+

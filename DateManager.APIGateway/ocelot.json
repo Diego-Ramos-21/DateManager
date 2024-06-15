@@ -1,0 +1,20 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/v1/date-manager",
+      "UpstreamHttpMethod": [
+        "Post"
+      ],
+      "RouteIsCaseSensitive": true,
+      "DownstreamPathTemplate": "/api/DateManager",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "datemanager.api",
+          "Port": 80
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}
